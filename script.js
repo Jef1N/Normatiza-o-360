@@ -258,14 +258,15 @@
     function rComputeS() {
       var sw = rStage.offsetWidth, sh = rStage.offsetHeight;
       if (!sw || !sh) { rS = 2; return; }
-      var screenW = sw * 0.7935, screenH = sh * 0.8529;
+      // usa o tamanho real da "tela" (varia entre laptop no desktop e iPad no mobile)
+      var screenW = (rScreen && rScreen.offsetWidth) || sw * 0.7935;
+      var screenH = (rScreen && rScreen.offsetHeight) || sh * 0.8529;
       rS = Math.max(window.innerWidth / screenW, window.innerHeight / screenH) * 1.04;
       if (rS < 1) rS = 1;
     }
     var rTick = false;
     function rUpdate() {
       rTick = false;
-      if (window.innerWidth <= 768) { rStage.style.transform = ""; if (rScreen) rScreen.style.transform = ""; if (rWash) rWash.style.opacity = ""; return; }
       var range = rTrack.offsetHeight - window.innerHeight;
       var p = range > 0 ? (-rTrack.getBoundingClientRect().top) / range : 0;
       p = Math.max(0, Math.min(1, p));

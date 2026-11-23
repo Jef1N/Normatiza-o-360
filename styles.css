@@ -292,6 +292,7 @@ h1,h2,h3,h4,.sec-title,.sec-title-sm,.faq-item summary{text-wrap:balance;hyphens
 .reuniao-sticky{position:sticky;top:0;height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden}
 .reuniao-stage{position:relative;width:min(1000px,92vw);transform-origin:50% 45%;will-change:transform}
 .reuniao-laptop{display:block;width:100%;height:auto;pointer-events:none;user-select:none}
+.reuniao-ipad{display:none;width:100%;height:auto;pointer-events:none;user-select:none}
 /* Lençol branco que entra no fim do zoom: apaga o padrão da tela e chega
    no branco chapado, sem corte duro. */
 .reuniao-wash{position:absolute;left:10.3%;right:10.37%;top:2.48%;bottom:12.23%;background:#fff;opacity:0;pointer-events:none}
@@ -302,14 +303,15 @@ h1,h2,h3,h4,.sec-title,.sec-title-sm,.faq-item summary{text-wrap:balance;hyphens
 .img-placeholder{background:#2a2c3a;border-radius:var(--radius-lg);width:100%}
 
 @media (max-width:768px){
-  .reuniao{padding-block:clamp(60px,9vw,96px);padding-inline:clamp(20px,5vw,40px)}
-  .reuniao-track{height:auto}
-  .reuniao-sticky{position:static;height:auto;overflow:visible}
-  .reuniao-stage{width:100%;transform:none!important}
+  /* mobile: mantém o zoom "entrar na tela", agora com o mockup de iPad */
+  .reuniao{padding:0}
+  .reuniao-stage{width:min(86vw,56vh);transform-origin:50% 50%}
   .reuniao-laptop{display:none}
-  .reuniao-screen{position:static;inset:auto;transform:none!important;padding:0;max-width:600px;margin:0 auto}
-  .reuniao-screen .sec-title{color:#fff;font-size:clamp(24px,6vw,30px)}
-  .reuniao-screen p{color:var(--muted);max-width:100%;font-size:16px}
+  .reuniao-ipad{display:block}
+  .reuniao-wash,.reuniao-screen{left:5.21%;right:5.34%;top:3.78%;bottom:3.88%}
+  .reuniao-screen{padding:clamp(18px,5vw,34px);gap:clamp(10px,2.6vw,18px)}
+  .reuniao-screen .sec-title{color:#10101a;font-size:clamp(20px,5.6vw,30px)}
+  .reuniao-screen p{color:#52525b;max-width:94%;font-size:clamp(13px,3.7vw,16px);line-height:1.5}
 }
 
 /* ---------- ENTREGAS (claro: cards centralizados, imagem dentro de cada) ---------- */
