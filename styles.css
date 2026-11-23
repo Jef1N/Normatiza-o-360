@@ -346,8 +346,9 @@ h1,h2,h3,h4,.sec-title,.sec-title-sm,.faq-item summary{text-wrap:balance;hyphens
   font-size:18px;font-weight:300;line-height:1.4;text-wrap:balance;
 }
 .mandato-badge strong{font-weight:600}
-/* coluna à direita só reserva o espaço (transparente) para um background-image no bloco */
-.mandato-media{min-height:100%}
+/* coluna à direita: imagem de fundo com fade para o fundo do bloco à esquerda */
+.mandato-media{position:relative;min-height:100%;background:#0b0d1e url('assets/mandato-bg.webp') center center/cover no-repeat}
+.mandato-media::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#0b0d1e 0%,rgba(11,13,30,.6) 26%,rgba(11,13,30,0) 72%)}
 
 /* ---------- QUEM FAZ (claro) ---------- */
 .quem-head{max-width:640px;margin-bottom:clamp(44px,5vw,64px)}
