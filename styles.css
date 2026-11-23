@@ -576,6 +576,9 @@ h1,h2,h3,h4,.sec-title,.sec-title-sm,.faq-item summary{text-wrap:balance;hyphens
   .btn{width:100%}
   /* largura contida para a microcopy não correr por baixo do botão flutuante */
   .microcopy{max-width:270px}
+  /* padroniza os parágrafos em 16px no mobile */
+  .sec-lead,.hero-sub,.card-body,.alt-card-body p,.method-card-desc,.cf-desc,
+  .mandato-p,.team-info p,.community-item p,.instr-card p,.faq-answer p,.fech-sub{font-size:16px}
 }
 
 @media (prefers-reduced-motion:reduce){
