@@ -275,19 +275,35 @@ h1,h2,h3,h4,.sec-title,.sec-title-sm,.faq-item summary{text-wrap:balance;hyphens
 .method-card-cta:hover span{transform:translateX(4px)}
 
 /* ---------- COMO FUNCIONA (timeline no tema escuro) ---------- */
-.cf-head{max-width:720px;margin:0 auto clamp(40px,5vw,56px);text-align:center}
+.cf-head{max-width:720px;margin:0 auto clamp(8px,1vw,16px);text-align:center}
 .cf-head .sec-lead{max-width:600px;margin-inline:auto}
 /* Barra de progresso animada no topo da timeline (acompanha o scroll) */
-.cf-progress{position:relative;max-width:900px;margin:0 auto clamp(40px,5vw,60px);padding-top:46px}
-.cf-bar{position:relative;height:4px;border-radius:999px;background:rgba(255,255,255,.08);overflow:hidden}
-.cf-bar-fill{position:absolute;inset:0 auto 0 0;width:0;border-radius:999px;background:var(--gold-grad);transition:width .5s var(--ease)}
-.cf-marker{position:absolute;top:0;left:7%;transform:translateX(-50%);display:inline-flex;align-items:center;gap:4px;
-  white-space:nowrap;padding:8px 15px;border-radius:999px;border:1px solid var(--border-dark);background:var(--navy-card);
-  font-size:12px;font-weight:600;text-transform:uppercase;line-height:1;color:var(--gold-1);
-  box-shadow:0 10px 24px -12px rgba(0,1,29,.8);transition:left .5s var(--ease)}
-.cf-marker span{color:var(--muted)}
-.cf-marker::after{content:"";position:absolute;left:50%;bottom:-5px;width:9px;height:9px;transform:translateX(-50%) rotate(45deg);
-  background:var(--navy-card);border-right:1px solid var(--border-dark);border-bottom:1px solid var(--border-dark)}
+/* Cronograma animado no topo da timeline (sticky, enche conforme o scroll) */
+.prog{position:sticky;top:0;z-index:5;max-width:960px;margin:0 auto clamp(10px,1.4vw,18px);
+  padding-block:clamp(64px,7.5vw,84px) 18px;background:var(--navy-900)}
+.prog::after{content:"";position:absolute;inset-inline:0;top:100%;height:4rem;pointer-events:none;
+  background:linear-gradient(var(--navy-900) 25%,rgba(0,1,29,0))}
+.prog__labels{display:flex;gap:2px}
+.prog__seg{min-width:0;padding-inline-end:.75rem}
+.prog__seg b{display:block;font-size:15px;font-weight:500;line-height:1.5;letter-spacing:-.012em;
+  color:rgba(255,255,255,.34);transition:color .3s var(--ease)}
+.prog__seg.is-on b{color:#fff}
+.prog__seg:nth-child(1){flex:4}
+.prog__seg:nth-child(2){flex:2}
+.prog__seg:nth-child(3){flex:1}
+.prog__seg:nth-child(4){flex:1}
+.prog__track{position:relative;height:10px;margin-block-start:14px;border-radius:999px;overflow:hidden;background:rgba(255,255,255,.10)}
+.prog__fill{position:absolute;inset-block:0;inset-inline-start:0;width:0;border-radius:999px;
+  background:var(--gold-grad);box-shadow:0 0 20px rgba(246,224,188,.3);transition:width .5s var(--ease)}
+.prog__track i{position:absolute;inset-block:0;z-index:2;width:2px;inset-inline-start:calc(var(--at) / 8 * 100%);background:var(--navy-900)}
+.prog__now{display:flex;align-items:baseline;justify-content:flex-end;gap:.625rem;white-space:nowrap;
+  width:0;min-width:-webkit-fit-content;min-width:fit-content;margin-block-start:14px;font-size:14px;line-height:1.5;
+  transition:width .5s var(--ease)}
+.prog__now b{font-weight:600;color:#fff}
+.prog__now span{color:var(--muted)}
+.prog__now.is-new b,.prog__now.is-new span{animation:progIn .45s var(--ease) both}
+.prog__now.is-new span{animation-delay:.05s}
+@keyframes progIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 
 .cf-timeline{position:relative;list-style:none;margin:0 auto;padding:0;max-width:960px}
 .cf-line{position:absolute;left:19px;top:0;width:2px;background:rgba(255,255,255,.12)}
@@ -611,6 +627,9 @@ h1,h2,h3,h4,.sec-title,.sec-title-sm,.faq-item summary{text-wrap:balance;hyphens
   .phase-card{padding-top:8px}
 }
 @media (max-width:620px){
+  /* cronograma: no mobile só a barra + marcador (os 4 rótulos apertam) */
+  .prog__labels{display:none}
+  .prog{padding-block:clamp(52px,14vw,68px) 12px}
   .prob-grid{grid-template-columns:1fr}
   .team-grid{grid-template-columns:1fr}
   .community{grid-template-columns:1fr;gap:22px}

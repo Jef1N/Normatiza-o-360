@@ -194,11 +194,16 @@
   if (cfTimeline) {
     var cfItems = Array.prototype.slice.call(cfTimeline.querySelectorAll(".cf-item"));
     var cfTotal = cfItems.length;
-    var cfFill = document.getElementById("cfFill");
-    var cfMarker = document.getElementById("cfMarker");
-    var cfMarkerMonth = document.getElementById("cfMarkerMonth");
     var cfLine = document.getElementById("cfLine");
     var cfLineFill = document.getElementById("cfLineFill");
+    // barra de progresso (cronograma) no topo da timeline
+    var progFill = document.getElementById("progFill");
+    var progNow = document.getElementById("progNow");
+    var progFase = document.getElementById("progFase");
+    var progWhen = document.getElementById("progWhen");
+    var progSegs = Array.prototype.slice.call(document.querySelectorAll(".prog__seg"));
+    var PROG_MESES = 8;
+    var PROG_INICIO = [0, 4, 6, 7]; // mês em que cada segmento começa
     var cfCurrent = -2;
 
     function cfDotCenter(i) {
@@ -222,11 +227,17 @@
         else cfItems[i].classList.remove("is-active");
       }
       var shown = idx < 0 ? 0 : idx;
-      var pct = idx < 0 ? 0 : ((idx + 1) / cfTotal) * 100;
-      if (cfFill) cfFill.style.width = pct + "%";
-      if (cfMarker) cfMarker.style.left = (idx < 0 ? 7 : Math.min(96, Math.max(7, pct))) + "%";
-      if (cfMarker) cfMarker.querySelector("strong").textContent = "Fase " + ("0" + (shown + 1)).slice(-2);
-      if (cfMarkerMonth) cfMarkerMonth.textContent = "· " + cfItems[shown].getAttribute("data-month");
+      // a barra mede MESES VENCIDOS (data-mes), não a posição na lista
+      var mes = idx < 0 ? 0 : (parseFloat(cfItems[shown].getAttribute("data-mes")) || 0);
+      var avanco = (mes / PROG_MESES * 100) + "%";
+      if (progFill) progFill.style.width = avanco;
+      if (progNow) progNow.style.width = avanco;
+      for (var s = 0; s < progSegs.length; s++) {
+        progSegs[s].classList.toggle("is-on", mes >= PROG_INICIO[s]);
+      }
+      if (progFase) progFase.textContent = "Fase " + ("0" + (shown + 1)).slice(-2);
+      if (progWhen) progWhen.textContent = cfItems[shown].getAttribute("data-month");
+      if (progNow && idx >= 0) { progNow.classList.remove("is-new"); void progNow.offsetWidth; progNow.classList.add("is-new"); }
       if (cfLineFill) cfLineFill.style.height = Math.max(0, idx < 0 ? 0 : (cfDotCenter(idx) - cfDotCenter(0))) + "px";
     }
     var cfTicking = false;

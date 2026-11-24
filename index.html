@@ -249,14 +249,25 @@
       <h2 class="sec-title">Seis fases, com começo, meio e fim</h2>
     </div>
 
-    <div class="cf-progress" data-reveal aria-hidden="true">
-      <div class="cf-marker" id="cfMarker"><strong>Fase 01</strong><span id="cfMarkerMonth"> · mês 1</span></div>
-      <div class="cf-bar"><span class="cf-bar-fill" id="cfFill"></span></div>
+    <div class="prog" data-reveal>
+      <div class="prog__labels" aria-hidden="true">
+        <div class="prog__seg"><b>Lei Orgânica</b></div>
+        <div class="prog__seg"><b>Regimento</b></div>
+        <div class="prog__seg"><b>Código de Ética</b></div>
+        <div class="prog__seg"><b>Consolidação</b></div>
+      </div>
+      <div class="prog__track" role="img" aria-label="Divisão dos oito meses do projeto: quatro para a Lei Orgânica, dois para o Regimento Interno, um para o Código de Ética e um para a consolidação final.">
+        <span class="prog__fill" id="progFill"></span>
+        <i style="--at:4"></i><i style="--at:6"></i><i style="--at:7"></i>
+      </div>
+      <p class="prog__now" id="progNow" aria-hidden="true">
+        <b id="progFase">Fase 01</b><span id="progWhen">mês 1</span>
+      </p>
     </div>
 
     <ol class="cf-timeline" id="cfTimeline">
       <span class="cf-line" id="cfLine" aria-hidden="true"><span class="cf-line-fill" id="cfLineFill"></span></span>
-      <li class="cf-item" data-month="mês 1">
+      <li class="cf-item" data-month="mês 1" data-mes="1">
         <span class="cf-dot">01</span>
         <div class="cf-item-main">
           <h3>Diagnóstico e onboarding</h3>
@@ -264,7 +275,7 @@
         </div>
         <p class="cf-desc">A banca estuda as normas vigentes antes de qualquer reunião, apoia a formação da comissão revisora e entrega o cronograma completo do projeto.</p>
       </li>
-      <li class="cf-item" data-month="meses 2 a 4">
+      <li class="cf-item" data-month="meses 2 a 4" data-mes="4">
         <span class="cf-dot">02</span>
         <div class="cf-item-main">
           <h3>Lei Orgânica</h3>
@@ -272,7 +283,7 @@
         </div>
         <p class="cf-desc">Revisão em 6 blocos temáticos, com uma reunião semanal por bloco e o texto nas mãos da comissão antes de cada encontro.</p>
       </li>
-      <li class="cf-item" data-month="mês 4">
+      <li class="cf-item" data-month="mês 4" data-mes="4">
         <span class="cf-dot">03</span>
         <div class="cf-item-main">
           <h3>Audiência pública</h3>
@@ -280,7 +291,7 @@
         </div>
         <p class="cf-desc">Edital, ofícios, roteiro e formulário de sugestões chegam prontos. As contribuições acolhidas entram no texto, e a Proposta de Emenda à Lei Orgânica vai a protocolo.</p>
       </li>
-      <li class="cf-item" data-month="meses 5 e 6">
+      <li class="cf-item" data-month="meses 5 e 6" data-mes="6">
         <span class="cf-dot">04</span>
         <div class="cf-item-main">
           <h3>Regimento Interno</h3>
@@ -288,7 +299,7 @@
         </div>
         <p class="cf-desc">Reconstrução em 4 blocos, compatibilizada com a nova Lei Orgânica, com regras para sessão remota, votação eletrônica e transparência.</p>
       </li>
-      <li class="cf-item" data-month="mês 7">
+      <li class="cf-item" data-month="mês 7" data-mes="7">
         <span class="cf-dot">05</span>
         <div class="cf-item-main">
           <h3>Código de Ética e Conduta Parlamentar</h3>
@@ -296,7 +307,7 @@
         </div>
         <p class="cf-desc">Deveres, vedações, sanções proporcionais e processo disciplinar com direito de defesa, em duas reuniões.</p>
       </li>
-      <li class="cf-item" data-month="mês 8">
+      <li class="cf-item" data-month="mês 8" data-mes="8">
         <span class="cf-dot">06</span>
         <div class="cf-item-main">
           <h3>Tramitação e encerramento</h3>
