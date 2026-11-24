@@ -329,10 +329,11 @@ h1,h2,h3,h4,.sec-title,.sec-title-sm,.faq-item summary{text-wrap:balance;hyphens
   .reuniao-laptop{display:none}
   .reuniao-ipad{display:block}
   .reuniao-wash,.reuniao-screen{left:5.21%;right:5.34%;top:3.78%;bottom:3.88%}
-  .reuniao-screen{padding:clamp(18px,5vw,34px);gap:clamp(10px,2.6vw,18px)}
-  .reuniao-screen .sec-title{color:#10101a;font-size:clamp(20px,5.6vw,30px)}
-  .reuniao-screen p{color:#52525b;max-width:94%;font-size:clamp(13px,3.7vw,16px);line-height:1.5}
-  .reuniao-shot{width:min(90%,350px)}
+  .reuniao-screen{padding:clamp(44px,11vw,58px) clamp(16px,4.5vw,30px) clamp(16px,4vw,24px);gap:clamp(7px,1.8vw,13px);justify-content:flex-start}
+  .reuniao-screen .sec-title{color:#10101a;font-size:clamp(18px,5vw,28px)}
+  .reuniao-screen p{color:#52525b;max-width:98%;font-size:clamp(11px,3.1vw,13.5px);line-height:1.38}
+  .reuniao-shot{width:min(92%,340px);margin:auto auto 0}
+  .reuniao-shot img{object-position:center bottom}
 }
 
 /* ---------- ENTREGAS (claro: cards centralizados, imagem dentro de cada) ---------- */
