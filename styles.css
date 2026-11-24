@@ -383,6 +383,7 @@ h1,h2,h3,h4,.sec-title,.sec-title-sm,.faq-item summary{text-wrap:balance;hyphens
   font-size:18px;font-weight:300;line-height:1.4;text-wrap:balance;
 }
 .mandato-badge strong{font-weight:600}
+.mandato-btn{margin-top:clamp(28px,3.4vw,40px)}
 /* coluna à direita: mockup de MacBook com a tela "Mês 4" (texto nativo) */
 .mandato-media{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;padding:clamp(16px,2.4vw,40px) clamp(16px,2.6vw,48px)}
 .mandato-laptop{position:relative;width:100%;max-width:520px}
@@ -515,6 +516,10 @@ h1,h2,h3,h4,.sec-title,.sec-title-sm,.faq-item summary{text-wrap:balance;hyphens
 .footer-link{font-size:15px;font-weight:300;color:#fff;transition:color .2s}
 .footer-link:hover{color:var(--gold-1)}
 .footer-oab{font-size:14px;font-weight:300;color:var(--muted-2)}
+.footer-social{display:flex;gap:12px;margin-top:18px}
+.social-ic{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;border:1px solid var(--border-dark);color:var(--muted);transition:color .2s var(--ease),border-color .2s var(--ease),transform .2s var(--ease)}
+.social-ic svg{width:19px;height:19px}
+.social-ic:hover{color:var(--gold-1);border-color:var(--gold-1);transform:translateY(-2px)}
 .footer-bottom{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;padding-top:30px}
 .footer-disclaimer{font-size:12.5px;font-weight:300;line-height:1.5;color:var(--muted-2);max-width:62ch}
 .footer-meta{display:flex;flex-wrap:wrap;align-items:center;gap:20px;font-size:13px;font-weight:300;color:var(--muted-2)}
@@ -575,8 +580,13 @@ h1,h2,h3,h4,.sec-title,.sec-title-sm,.faq-item summary{text-wrap:balance;hyphens
 @media (max-width:860px){
   /* mobile: foto vertical (casal no topo, navy embaixo para o texto) */
   .hero-photo{width:100%;opacity:1;background-image:url('assets/hero-socios-mobile.webp');background-position:center top}
-  .hero-scrim{background:linear-gradient(180deg,rgba(0,1,29,0) 88%,#00011d 100%)}
-  .hero-inner{min-height:auto;padding-top:118vw;padding-bottom:56px}
+  .hero-scrim{background:linear-gradient(180deg,rgba(0,1,29,0) 70%,rgba(0,1,29,.55) 86%,#00011d 100%)}
+  .hero-inner{min-height:auto;padding-top:92vw;padding-bottom:48px}
+  /* no mobile, prioriza a chamada acima da dobra: selos saem (repetem no Método) */
+  .seals{display:none}
+  .hero-title{font-size:clamp(27px,7vw,34px);line-height:1.14}
+  .hero-sub{margin-top:18px;line-height:1.45}
+  .hero-actions{margin-top:22px}
   .metodo-grid{grid-template-columns:1fr;gap:18px}
   /* card mais alto: sobra mais imagem acima do texto (ancorado embaixo) */
   .method-card{aspect-ratio:4/5}
