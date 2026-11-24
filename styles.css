@@ -316,12 +316,11 @@ h1,h2,h3,h4,.sec-title,.sec-title-sm,.faq-item summary{text-wrap:balance;hyphens
 .reuniao-screen p{color:#52525b;max-width:82%;font-size:clamp(11.5px,1.15vw,16px);font-weight:300;line-height:1.5}
 
 .img-placeholder{background:#2a2c3a;border-radius:var(--radius-lg);width:100%}
-/* bloco de imagem abaixo do conteúdo da reunião */
-.reuniao-after{padding-top:0;padding-bottom:clamp(64px,8vw,110px)}
-.reuniao-photo{position:relative;max-width:1000px;margin:0 auto;border-radius:var(--radius-lg);overflow:hidden;aspect-ratio:16/9;background:#171a28;border:1px solid var(--border-dark)}
-.reuniao-photo img{width:100%;height:100%;object-fit:cover;display:block}
-.reuniao-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,1,29,.12),rgba(0,1,29,.32));pointer-events:none}
-.reuniao-photo.is-empty{aspect-ratio:16/8}
+/* imagem dentro da tela da reunião, logo abaixo do texto */
+.reuniao-shot{width:min(56%,380px);margin:clamp(8px,1.5vw,18px) auto 0;border-radius:9px;overflow:hidden;
+  aspect-ratio:16/9;background:#e7e7ec;border:1px solid rgba(16,16,26,.12);
+  box-shadow:0 14px 30px -16px rgba(16,16,26,.45)}
+.reuniao-shot img{width:100%;height:100%;object-fit:cover;display:block}
 
 @media (max-width:768px){
   /* mobile: mantém o zoom "entrar na tela", agora com o mockup de iPad */
@@ -333,6 +332,7 @@ h1,h2,h3,h4,.sec-title,.sec-title-sm,.faq-item summary{text-wrap:balance;hyphens
   .reuniao-screen{padding:clamp(18px,5vw,34px);gap:clamp(10px,2.6vw,18px)}
   .reuniao-screen .sec-title{color:#10101a;font-size:clamp(20px,5.6vw,30px)}
   .reuniao-screen p{color:#52525b;max-width:94%;font-size:clamp(13px,3.7vw,16px);line-height:1.5}
+  .reuniao-shot{width:min(82%,300px)}
 }
 
 /* ---------- ENTREGAS (claro: cards centralizados, imagem dentro de cada) ---------- */
