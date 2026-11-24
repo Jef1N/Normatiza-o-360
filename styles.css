@@ -73,7 +73,7 @@ button{font-family:inherit}
 .sec-title.dark{color:var(--ink)}
 .sec-title-sm{font-weight:300;font-size:clamp(23px,2.6vw,30px);line-height:1.15;letter-spacing:-.02em;color:var(--ink)}
 /* ---------- Eyebrow (sobretítulo em pill) ---------- */
-.eyebrow{display:flex;width:fit-content;max-width:100%;margin-right:auto;align-items:center;gap:8px;padding:12px 24px;border-radius:999px;
+.eyebrow{display:inline-flex;max-width:100%;align-items:center;gap:8px;padding:12px 24px;border-radius:999px;
   border:1px solid rgba(255,255,255,.16);
   background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.015));
   font-size:12.5px;font-weight:500;letter-spacing:0;text-transform:uppercase;line-height:1.25;
