@@ -72,6 +72,14 @@ button{font-family:inherit}
 }
 .sec-title.dark{color:var(--ink)}
 .sec-title-sm{font-weight:300;font-size:clamp(23px,2.6vw,30px);line-height:1.15;letter-spacing:-.02em;color:var(--ink)}
+/* ---------- Eyebrow (sobretítulo em pill) ---------- */
+.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:999px;
+  border:1px solid rgba(255,255,255,.16);
+  background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.015));
+  font-size:12.5px;font-weight:500;letter-spacing:.13em;text-transform:uppercase;line-height:1.25;
+  text-align:center;color:rgba(255,255,255,.74);margin-bottom:clamp(18px,2.2vw,26px)}
+.eyebrow--light{border-color:rgba(5,12,27,.16);background:linear-gradient(180deg,rgba(5,12,27,.05),rgba(5,12,27,.012));color:rgba(5,12,27,.6)}
+.eyebrow-c{text-align:center}
 .sec-lead{margin-top:22px;font-weight:300;font-size:18px;line-height:1.6;color:var(--muted)}
 .is-light .sec-lead,.alternativas .sec-lead,.entregas .sec-lead,.instrumentos .sec-lead{color:var(--ink-soft)}
 .grad-text{
@@ -583,6 +591,7 @@ h1,h2,h3,h4,.sec-title,.sec-title-sm,.faq-item summary{text-wrap:balance;hyphens
   /* padroniza os parágrafos em 16px no mobile */
   .sec-lead,.hero-sub,.card-body,.alt-card-body p,.method-card-desc,.cf-desc,
   .mandato-p,.team-info p,.community-item p,.instr-card p,.faq-answer p,.fech-sub{font-size:16px}
+  .eyebrow{font-size:11px;letter-spacing:.1em;padding:10px 18px}
 }
 
 @media (prefers-reduced-motion:reduce){
