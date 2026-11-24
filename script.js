@@ -282,4 +282,38 @@
     rComputeS();
     rUpdate();
   }
+
+  /* ---- 10. Prova social do hero: contagem animada dos números ---- */
+  var trustStats = document.getElementById("trustStats");
+  if (trustStats) {
+    var counts = Array.prototype.slice.call(trustStats.querySelectorAll(".count"));
+    function fmtCount(v, dec) { return v.toFixed(dec).replace(".", ","); }
+    function runCounts() {
+      counts.forEach(function (el) {
+        var to = parseFloat(el.getAttribute("data-to")) || 0;
+        var dec = parseInt(el.getAttribute("data-decimals") || "0", 10);
+        if (rReduce) { el.textContent = fmtCount(to, dec); return; }
+        var dur = 1400, start = null;
+        function step(ts) {
+          if (!start) start = ts;
+          var p = Math.min(1, (ts - start) / dur);
+          var eased = 1 - Math.pow(1 - p, 3);
+          el.textContent = fmtCount(to * eased, dec);
+          if (p < 1) requestAnimationFrame(step);
+          else el.textContent = fmtCount(to, dec);
+        }
+        requestAnimationFrame(step);
+      });
+    }
+    if ("IntersectionObserver" in window) {
+      var ioCount = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { runCounts(); ioCount.disconnect(); }
+        });
+      }, { threshold: 0.4 });
+      ioCount.observe(trustStats);
+    } else {
+      runCounts();
+    }
+  }
 })();
