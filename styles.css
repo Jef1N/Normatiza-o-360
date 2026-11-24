@@ -275,8 +275,19 @@ h1,h2,h3,h4,.sec-title,.sec-title-sm,.faq-item summary{text-wrap:balance;hyphens
 .method-card-cta:hover span{transform:translateX(4px)}
 
 /* ---------- COMO FUNCIONA (timeline no tema escuro) ---------- */
-.cf-head{max-width:720px;margin:0 auto clamp(44px,5vw,64px);text-align:center}
+.cf-head{max-width:720px;margin:0 auto clamp(40px,5vw,56px);text-align:center}
 .cf-head .sec-lead{max-width:600px;margin-inline:auto}
+/* Barra de progresso animada no topo da timeline (acompanha o scroll) */
+.cf-progress{position:relative;max-width:900px;margin:0 auto clamp(40px,5vw,60px);padding-top:46px}
+.cf-bar{position:relative;height:4px;border-radius:999px;background:rgba(255,255,255,.08);overflow:hidden}
+.cf-bar-fill{position:absolute;inset:0 auto 0 0;width:0;border-radius:999px;background:var(--gold-grad);transition:width .5s var(--ease)}
+.cf-marker{position:absolute;top:0;left:7%;transform:translateX(-50%);display:inline-flex;align-items:center;gap:4px;
+  white-space:nowrap;padding:8px 15px;border-radius:999px;border:1px solid var(--border-dark);background:var(--navy-card);
+  font-size:12px;font-weight:600;text-transform:uppercase;line-height:1;color:var(--gold-1);
+  box-shadow:0 10px 24px -12px rgba(0,1,29,.8);transition:left .5s var(--ease)}
+.cf-marker span{color:var(--muted)}
+.cf-marker::after{content:"";position:absolute;left:50%;bottom:-5px;width:9px;height:9px;transform:translateX(-50%) rotate(45deg);
+  background:var(--navy-card);border-right:1px solid var(--border-dark);border-bottom:1px solid var(--border-dark)}
 
 .cf-timeline{position:relative;list-style:none;margin:0 auto;padding:0;max-width:960px}
 .cf-line{position:absolute;left:19px;top:0;width:2px;background:rgba(255,255,255,.12)}
@@ -329,11 +340,10 @@ h1,h2,h3,h4,.sec-title,.sec-title-sm,.faq-item summary{text-wrap:balance;hyphens
   .reuniao-laptop{display:none}
   .reuniao-ipad{display:block}
   .reuniao-wash,.reuniao-screen{left:5.21%;right:5.34%;top:3.78%;bottom:3.88%}
-  .reuniao-screen{padding:clamp(44px,11vw,58px) clamp(16px,4.5vw,30px) clamp(16px,4vw,24px);gap:clamp(7px,1.8vw,13px);justify-content:flex-start}
+  .reuniao-screen{padding:clamp(30px,8vw,46px) clamp(16px,4.5vw,30px);gap:clamp(10px,2.4vw,16px);justify-content:center}
   .reuniao-screen .sec-title{color:#10101a;font-size:clamp(18px,5vw,28px)}
-  .reuniao-screen p{color:#52525b;max-width:98%;font-size:clamp(11px,3.1vw,13.5px);line-height:1.38}
-  .reuniao-shot{width:min(92%,340px);margin:auto auto 0}
-  .reuniao-shot img{object-position:center bottom}
+  .reuniao-screen p{color:#52525b;max-width:98%;font-size:clamp(11px,3.1vw,13.5px);line-height:1.4}
+  .reuniao-shot{width:min(92%,340px)}
 }
 
 /* ---------- ENTREGAS (claro: cards centralizados, imagem dentro de cada) ---------- */
