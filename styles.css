@@ -463,15 +463,19 @@ h1,h2,h3,h4,.sec-title,.sec-title-sm,.faq-item summary{text-wrap:balance;hyphens
   padding:30px;display:flex;flex-direction:column;gap:16px;min-height:260px;
 }
 .review-quote{display:block;font-family:var(--ff-serif);font-size:52px;line-height:.5;height:24px;color:var(--gold-1)}
-.review-top{display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:16px;border-top:1px solid #ececec}
+.review-top{display:flex;align-items:center;gap:12px}
+/* seção dos prints: autoria no rodapé do card, com divisória */
+#prova .review-top{margin-top:auto;padding-top:16px;border-top:1px solid #ececec}
 .avatar{width:42px;height:42px;border-radius:50%;background:var(--navy-900);color:#fff;display:grid;place-items:center;font-weight:600;font-size:16px;flex:none}
 .review-id{display:flex;flex-direction:column;line-height:1.25;margin-right:auto}
 .review-id strong{font-size:15px;font-weight:600;color:var(--ink)}
 .review-src{font-size:12.5px;color:#8a8a93}
-.review-card p{font-size:15px;font-weight:300;line-height:1.62;color:#3f3f47}
+.g-mark{font-family:var(--ff);font-weight:700;font-size:18px;color:#4285f4}
+.review-stars{color:#fbbc05;font-size:15px;letter-spacing:2px}
+.review-card p{font-size:15px;font-weight:300;line-height:1.6;color:#3f3f47}
 .carousel-controls{display:flex;align-items:center;justify-content:center;gap:20px;margin-top:34px}
-/* 3 depoimentos cabem na largura cheia: sem controles ociosos no desktop */
-@media (min-width:861px){.carousel-controls{display:none}}
+/* prints: 3 cabem na largura cheia, sem controles ociosos no desktop */
+@media (min-width:861px){#prova .carousel-controls{display:none}}
 .car-btn{width:48px;height:48px;border-radius:50%;border:1px solid var(--border-dark);background:transparent;color:#fff;display:grid;place-items:center;cursor:pointer;transition:border-color .2s,background .2s,transform .2s}
 .car-btn svg{width:22px;height:22px}
 .car-btn:hover{border-color:var(--gold-1);background:rgba(206,158,71,.1);transform:translateY(-1px)}

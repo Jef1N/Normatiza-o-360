@@ -87,14 +87,15 @@
   var yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  /* ---- 7. Carrossel de depoimentos ---- */
-  var track = document.getElementById("reviewsTrack");
-  var viewport = document.getElementById("reviewsViewport");
-  var prevBtn = document.getElementById("reviewPrev");
-  var nextBtn = document.getElementById("reviewNext");
-  var dotsWrap = document.getElementById("reviewDots");
+  /* ---- 7. Carrosséis de depoimentos (um ou mais) ---- */
+  document.querySelectorAll(".carousel").forEach(function (root) {
+    var track = root.querySelector(".carousel-track");
+    var viewport = root.querySelector(".carousel-viewport");
+    var prevBtn = root.querySelector(".car-prev");
+    var nextBtn = root.querySelector(".car-next");
+    var dotsWrap = root.querySelector(".carousel-dots");
+    if (!track || !viewport) return;
 
-  if (track && viewport) {
     var cards = Array.prototype.slice.call(track.children);
     var total = cards.length;
     var index = 0;
@@ -187,7 +188,7 @@
     buildDots();
     render();
     startAuto();
-  }
+  });
 
   /* ---- 8. Como funciona: timeline com progresso no scroll ---- */
   var cfTimeline = document.getElementById("cfTimeline");
