@@ -525,6 +525,7 @@ h1,h2,h3,h4,.sec-title,.sec-title-sm,.faq-item summary{text-wrap:balance;hyphens
 .footer-brand .brand-mark{width:44px;height:44px}
 .footer-brand .brand-logo{height:46px}
 .wordmark{display:inline-block;font-family:var(--ff-serif);font-size:26px;font-weight:600;color:#fff;margin:14px 0 10px;letter-spacing:.01em}
+.footer-logo{display:block;height:clamp(42px,5vw,52px);width:auto;margin-bottom:18px}
 .footer-tagline{font-size:14px;font-weight:300;line-height:1.55;color:var(--muted-2);max-width:34ch}
 .footer-where h4,.footer-contact h4{font-size:13px;font-weight:600;text-transform:uppercase;color:var(--gold-1);margin-bottom:16px}
 .footer-where p{font-size:14px;font-weight:300;line-height:1.6;color:var(--muted)}
